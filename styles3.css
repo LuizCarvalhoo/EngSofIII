@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Roboto-Bold'; 
+    src: url('Fonts/Roboto-Bold.woff2') format('woff2'), 
+         url('Fonts/Roboto-Bold.woff') format('woff'); 
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Light'; 
+    src: url('Fonts/Roboto-Light.woff2') format('woff2'), 
+         url('Fonts/Roboto-Light.woff') format('woff'); 
+  }
+  
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.fundo{
+    background-image: url('saude.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed; 
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.fundoMed{
+    background-image: url('medico.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed; 
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.container {
+    background-color: #DCDCDC;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ebe3e3;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+  }
+
+.listaMed {
+    background-color: #bdbdbd;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ebe3e3;
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.calendarioMed {
+    background-color: #DCDCDC;
+    width: 75%;
+    height: 80vh;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ebe3e3;
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.horarios {
+    background-color: #7a7474;
+
+}
+
+.datas {
+    background-color: #acabab;
+    width: fill;
+    height: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ebe3e3;
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Roboto-Bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9b9898;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9b9898;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.campotxt{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color:#228B22;                       
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: Roboto-Bold;
+}
+
+.ocupado {
+    background-color:#696969;                       
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: Roboto-Bold;
+}
+
+.btn {
+    background-color: #4CAF50; /* Cor de fundo */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
