@@ -11,7 +11,7 @@
     <div class="container">
     <?php
     
-    if(isset($_COOKIE['cpf'])) {
+    if(isset($_COOKIE['nome'])) {
         printf("<div>Olá, " . $_COOKIE['nome'] . "!</div>");
     }else{
         printf("<div>Deu ruim!</div>");

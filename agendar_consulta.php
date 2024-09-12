@@ -17,6 +17,7 @@
 session_start();
 
 $nome_paciente = $_COOKIE['nome'];
+$cpf = $_COOKIE['cpf'];
 $crm = $_POST["crm"];
 $nome_medico = $_POST["nome"];
 $especialidade = $_POST["especialidade"];
@@ -24,7 +25,7 @@ $cidade = $_POST["cidade"];
 $estado = $_POST["estado"];
 $data = $_POST["data"];
 $hora = $_POST["hora"];
-$cpf = $_COOKIE['cpf'];
+
 
 // Conexão com o banco de dados
 $conn = new mysqli("localhost", "root", "", "medicos");

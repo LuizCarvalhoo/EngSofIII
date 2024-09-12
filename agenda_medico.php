@@ -12,7 +12,8 @@
 </body>
     
     <?php
-   
+    
+    //$data = 0;
     $crm = $_POST["crm"];
     $nome = $_POST["nome"];
     $especialidade = $_POST["especialidade"];
@@ -35,6 +36,7 @@
     printf("<input type= 'hidden' name='cidade' value=".$cidade.">");
     printf("<input type= 'hidden' name='estado' value=".$estado.">");
     printf("<input type= 'hidden' name='telefone' value=".$telefone.">");
+    //printf("<input type= 'hidden' name='data' value='.$data.'>");
     
     printf("<button type='submit'>Pesquisar</button></div></form>");
             

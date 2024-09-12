@@ -37,13 +37,12 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Login válido, redireciona para a página de sucesso
-    
-    
     $row = $result->fetch_assoc();
     $nome_paciente = $row["Nome"];
-    $cpf = $row["cpf"];
+    //$cpf = $row["cpf"];
     setcookie('nome', $nome_paciente, time()+3600);
     setcookie('cpf', $cpf, time()+3600);
+
     header("Location: selecionar_especialidade.php");
     exit();
 } else {
