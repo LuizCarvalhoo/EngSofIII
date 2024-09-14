@@ -9,10 +9,15 @@
 <body>
     <div class="fundo">
     </div>
+
+    <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
+    <a href='selecionar_medico.php' class='btn'>Voltar</a></div>
+    </div>
+
 </body>
     
     <?php
-    
+    setcookie('contagem', 1, time()+3600);
     //$data = 0;
     $crm = $_POST["crm"];
     $nome = $_POST["nome"];
@@ -24,7 +29,7 @@
     $pesquisando = 1;
 
     printf("<form action='mostrar_datas.php' method='post'>");
-    printf("<div class='calendarioMed'>");
+    printf("<div class='listaMed'>");
     printf("<div style='text-align: left;'> Dr. " .$nome. ", " .$especialidade. "</div>");
     printf("<div style='text-align: left;'>" .$cidade. "," .$estado. "</div>");
     printf("<div style='text-align: left;'>Telefone: ".$telefone."</div>");

@@ -8,21 +8,20 @@
 </head>
 <body>
     <div class="fundo"></div>
+    
+    <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
+    </div>
+
     <div class="container">
     <?php
-    
-    if(isset($_COOKIE['nome'])) {
-        printf("<div>Olá, " . $_COOKIE['nome'] . "!</div>");
-    }else{
-        printf("<div>Deu ruim!</div>");
-    }
+
+    setcookie('contagem', 0, time()+3600);
+
         printf("<h1>Agendar Consulta</h1>");
         printf("<form action='selecionar_medico.php' method='post'>");
         printf("<label for='especialidades'>Selecione uma especialidade:</label>");
         printf("<select name='especialidade' required>");
         printf("<option value=''>Selecione...</option>");
-                
-
     
             // Conexão com o banco de dados
             $conn = new mysqli("localhost", "root", "", "medicos");
@@ -53,6 +52,12 @@
         </select>
         <button type="submit">Procurar</button>
         </form>
+    </div>
+    <div class="container">
+        <?php
+            printf("<h1>Minha Agenda</h1>");
+            printf("<center><a href='ver_datas.php' class='btn'>ver datas<a></center>");
+        ?>
     </div>
 </body>
 </html>

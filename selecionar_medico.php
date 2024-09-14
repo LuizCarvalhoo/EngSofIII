@@ -9,13 +9,24 @@
 <body>
     <div class="fundo">
     </div>
+
+    <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
+    <a href='selecionar_especialidade.php' class='btn'>Voltar</a></div>
+    </div>
+
 </body>
     <?php
 
     // Recebe os dados do formulário
-    $espec = $_POST["especialidade"];
-
-
+    if($_COOKIE['contagem']==1){
+        $espec = $_COOKIE['especialidade'];
+    }else{
+        $espec = $_POST["especialidade"];
+        setcookie('especialidade', $espec, time()+3600);
+    }
+   
+    
+    
     // Conexão com o banco de dados
     $conn = new mysqli("localhost", "root", "", "medicos");
 

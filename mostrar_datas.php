@@ -9,12 +9,13 @@
 <body>
     <div class="fundo">
     </div>
+    <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
+    <a href='selecionar_medico.php' class='btn'>Voltar</a></div>
+    </div>
 </body>
     
     <?php
-    printf("<pre>");
-    print_r($_REQUEST);
-    printf("</pre>");
+    
     $crm = $_POST["crm"];
     $nome = $_POST["nome"];
     $especialidade = $_POST["especialidade"];
@@ -35,17 +36,18 @@
     printf("<div style='text-align: left;'>" .$cidade. "," .$estado. "</div>");
     printf("<div style='text-align: left;'>Telefone: ".$telefone."</div>");
     printf("<div>Escolha uma data</div>");
-    printf("<input type= 'date' name='data' value= ".$data."></input>");
+    printf("<input type='date' name='data' value=".$data."></input>");
     printf("<input type= 'hidden' name='crm' value=".$crm.">");
     printf("<input type= 'hidden' name='nome' value=".$nome.">");
     printf("<input type= 'hidden' name='especialidade' value=".$especialidade.">");
     printf("<input type= 'hidden' name='cidade' value=".$cidade.">");
     printf("<input type= 'hidden' name='estado' value=".$estado.">");
     printf("<input type= 'hidden' name='telefone' value=".$telefone.">");
-    printf("<input type= 'hidden' name='data' value=".$data.">");
-    printf("<div>Mostrando resultados para " .$data. ".</div>") ;
-    printf("<div><button type='submit'>Pesquisar</button></div>");
-
+    //printf("<input type= 'hidden' name='data' value='.$data.'>");
+    
+    printf("<button type='submit'>Pesquisar</button>");
+    printf("<div>Mostrando horários para ".$data.".");
+    
     $conn = new mysqli("localhost", "root", "", "medicos");
     if ($conn->connect_error) {
         die("Erro de conexão: " . $conn->connect_error);
@@ -80,7 +82,7 @@
                 printf("<input type= 'hidden' name='estado' value=".$estado.">");
                 printf("<input type= 'hidden' name='telefone' value=".$telefone.">");
                 printf("<input type= 'hidden' name='hora' value=".$horarioStr.">");
-                printf("<input type= 'hidden' name='data' value=".$data.">");
+                printf("<input type= 'hidden' name='dataag' value=".$data.">");
                 printf("<button type='submit'>Agendar</button></div></form>");   
 
                 //"<button>".$horario.":00</button>";
@@ -98,7 +100,8 @@
     }    
 
     
-    printf("</form></div>");
+    printf("</div>");
+    printf("</div></form>");
     ?>
 </form>
 </html>

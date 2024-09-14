@@ -23,7 +23,7 @@ $nome_medico = $_POST["nome"];
 $especialidade = $_POST["especialidade"];
 $cidade = $_POST["cidade"];
 $estado = $_POST["estado"];
-$data = $_POST["data"];
+$data = $_POST["dataag"];
 $hora = $_POST["hora"];
 
 
@@ -52,8 +52,8 @@ $sql = "INSERT INTO consultas (paciente, cpf, medico, crm, hora, data) VALUES ('
 if ($conn->query($sql) === TRUE) {
 
     printf("<div class='container'>");
-    printf("<center>Consulta agendada com sucesso!</center>");  
-    printf("<a href='selecionar_especialidade.php' class='btn'>Voltar</a>");
+    printf("<center>Sua consulta para o dia ".$data." às ".$hora." foi agendada!</center>");  
+    printf("<center><a href='selecionar_especialidade.php' class='btn'>Voltar</a></center>");
     printf("</div>");
 } else {
     echo "Erro ao agendar consulta: " . $conn->error;

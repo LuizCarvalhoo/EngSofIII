@@ -14,7 +14,12 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .fundo{
@@ -46,17 +51,12 @@ body {
 }
 
 .container {
-    background-color: #DCDCDC;
-    width: 400px;
-    margin: 0 auto;
+    background-color:#DCDCDC;
+    width: 80%;
+    margin: 20px 0;
     padding: 20px;
     border: 1px solid #ebe3e3;
     border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: auto;
   }
 
 .listaMed {
@@ -67,12 +67,12 @@ body {
     border: 1px solid #ebe3e3;
     border-radius: 10px;
     text-align: center;
-    overflow: auto;
+    
 }
 
 .calendarioMed {
     background-color: #DCDCDC;
-    width: 75%;
+    width: 100%;
     height: 80vh;
     margin: 10px auto;
     padding: 10px;
@@ -108,7 +108,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 5px;
-
+    margin-right: 20px;
 }
 
 input {
@@ -142,6 +142,7 @@ button {
     border: none;
     cursor: pointer;
     font-family: Roboto-Bold;
+    
 }
 
 .ocupado {
@@ -164,4 +165,32 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-right: 20px;
   }
+
+  .header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color:  #DCDCDC;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ebe3e3;
+    overflow: auto;
+
+    display: flex; /* Transforma a div em um container flex */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: flex-end; /* Alinha os itens à esquerda */
+}
+
+.espacamento{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    overflow: auto;
+    margin-right: 20px;
+}
