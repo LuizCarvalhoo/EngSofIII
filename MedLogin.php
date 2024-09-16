@@ -16,7 +16,7 @@
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
-            <a href = "CadastroMed.php">Cadastre-se</a>
+            <a href = "telasMedicos/CadastroMed.php">Cadastre-se</a>
             <a href = "index.html">Sou paciente</a>
         </form>
     </div>

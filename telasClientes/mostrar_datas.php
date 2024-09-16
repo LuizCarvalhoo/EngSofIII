@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda do médico</title>
-    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="../styles3.css">
 </head>
 <body>
     <div class="fundo">
@@ -70,10 +70,10 @@
         while ($horario <= 17) {
             
             if($horario != 12 && !in_array($horarioStr,$horario_agendado)){
-                echo  "<form action='agendar_consulta.php' method='post'>
-                        <div class='listaMed'>
-                        <div style='text-align: left;'>".$horario.":00</div>
-                        <hr>";
+                printf("<form action='agendar_consulta.php' method='post'>");
+                printf("<div class='listaMed'>");
+                printf("<div style='text-align: left;'>".$horario.":00</div>");
+                printf("<hr>");
 
                 printf("<input type= 'hidden' name='crm' value=".$crm.">");
                 printf("<input type= 'hidden' name='nome' value=".$nome.">");

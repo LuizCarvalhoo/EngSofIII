@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
-    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="../styles3.css">
 </head>
 <body>
     <div class="fundo"></div>
+
+    <div class = "header">
+    <a href='../index.html' class='btn'>Voltar</a></div>
+    </div>
+    <div class="nav">
     <div class="container">
         <h1>Cadastro de Clientes</h1>
         <form method="POST" action="processar_cadastro.php">
@@ -85,6 +90,7 @@
             <button type="submit">Cadastrar</button>
         </form>
     </div>
+</div>
 </body>
 </html>
 

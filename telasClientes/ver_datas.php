@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selecionar médico</title>
-    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="../styles3.css">
 </head>
 <body>
     <div class="fundo">
@@ -36,11 +36,17 @@
             echo "<div class=listaMed>Data: ".$row["data"]."
                 <div>Horário: ".$row["hora"]."</div>
                 <div>Dr. ".$row["medico"]."</div>
+                <div><form action='cancelar_consulta.php' method='post'>
+                <input type= 'hidden' name='cpf' value=".$row['cpf'].">
+                <input type= 'hidden' name='crm' value=".$row['crm'].">
+                <input type= 'hidden' name='data' value=".$row['data'].">
+                <input type= 'hidden' name='hora' value=".$row['hora'].">
+                <button type='submit' class= 'btn2'>Cancelar</button></form></div>
                 </div>";
         }
         printf("</div>");
     } else {
-        echo "<p class='container'>Nenhum médico encontrado</p>";
+        echo "<p class='container'>Você ainda não tem consultas agendadas.</p>";
     }
 
 

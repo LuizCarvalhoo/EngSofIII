@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
     setcookie('nome', $nome_paciente, time()+3600);
     setcookie('cpf', $cpf, time()+3600);
 
-    header("Location: selecionar_especialidade.php");
+    header("Location: telasClientes/selecionar_especialidade.php");
     exit();
 } else {
     // Login inválido, redireciona para a página de login com mensagem de erro

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Consulta</title>
-    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="../styles3.css">
 </head>
 <body>
     <div class="fundo"></div>
@@ -56,7 +56,7 @@
     <div class="container">
         <?php
             printf("<h1>Minha Agenda</h1>");
-            printf("<center><a href='ver_datas.php' class='btn'>ver datas<a></center>");
+            printf("<center><a href='ver_datas.php' class='btn'>Ver minhas consultas<a></center>");
         ?>
     </div>
 </body>
