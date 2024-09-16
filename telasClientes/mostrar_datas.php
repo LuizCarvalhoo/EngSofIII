@@ -45,7 +45,8 @@
     printf("<input type= 'hidden' name='telefone' value=".$telefone.">");
     //printf("<input type= 'hidden' name='data' value='.$data.'>");
     
-    printf("<button type='submit'>Pesquisar</button>");
+    printf("<button type='submit'>Pesquisar</button></form>");
+    $data = date("d/m/Y", strtotime($data));
     printf("<div>Mostrando horários para ".$data.".");
     
     $conn = new mysqli("localhost", "root", "", "medicos");
@@ -99,9 +100,8 @@
         echo "<p class='container'>Nenhum horário disponível</p>";
     }    
 
-    
     printf("</div>");
-    printf("</div></form>");
+    printf("</div>");
     ?>
 </form>
 </html>

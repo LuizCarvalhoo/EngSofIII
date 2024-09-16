@@ -33,7 +33,9 @@
     if ($result->num_rows > 0) {
         printf("<div class='espacamento'>");
         while ($row = $result->fetch_assoc()) {
-            echo "<div class=listaMed>Data: ".$row["data"]."
+            $data = $row["data"];
+            $data = date("d/m/Y", strtotime($data));
+            echo "<div class=listaMed>Data: ".$data."
                 <div>Horário: ".$row["hora"]."</div>
                 <div>Dr. ".$row["medico"]."</div>
                 <div><form action='cancelar_consulta.php' method='post'>
