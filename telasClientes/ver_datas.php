@@ -13,8 +13,6 @@
     <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
     <a href='selecionar_especialidade.php' class='btn'>Voltar</a></div>
     </div>
-
-</body>
     <?php
     $cpf = $_COOKIE['cpf'];
     // Conexão com o banco de dados
@@ -57,4 +55,5 @@
 
     ?>
 </form>
+</body>
 </html>
