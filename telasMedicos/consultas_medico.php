@@ -16,9 +16,20 @@
 
     <div class="calendarioMed3">
         <?php
-         printf("<form action='mostrar_datas.php' method='post'>");
-         printf("<input type='date' name='data' value=today></input>");
+        $data_hoje = date('d/m/Y');
+
+        if (isset($data)) {
+            $data = $_POST['data'];
+        } else {
+            $data = 1;
+        }
+
+        
+
+         printf("<form action='consultas_medico.php' method='post'>");
+         printf("<input type='date' name='data' value=".$data_hoje."></input>");
          printf("<button type='submit'>Pesquisar</button></form>");
+        echo $data_hoje;
         ?>
     </div>
 
@@ -48,9 +59,7 @@
                     <input type='hidden' name='hora' value=".$row["hora"].">
                     <input type='hidden' name='data' value=".$row["data"].">
                     <input type='hidden' name='crm' value=".$row["crm"].">
-                    <button type='submit' class= 'btn2'>Cancelar</button></div></form>";
-
-                    
+                    <button type='submit' class= 'btn2'>Cancelar</button></div></form>";  
                 }
             }
         ?>
