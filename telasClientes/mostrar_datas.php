@@ -46,8 +46,8 @@
     //printf("<input type= 'hidden' name='data' value='.$data.'>");
     
     printf("<button type='submit'>Pesquisar</button></form>");
-    $data = date("d/m/Y", strtotime($data));
-    printf("<div>Mostrando horários para ".$data.".");
+    $datamos = date("d/m/Y", strtotime($data));
+    printf("<div>Mostrando horários para ".$datamos.".");
     
     $conn = new mysqli("localhost", "root", "", "medicos");
     if ($conn->connect_error) {

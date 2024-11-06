@@ -39,9 +39,11 @@ if ($result->num_rows > 0) {
     // Login válido, redireciona para a página de sucesso
     $row = $result->fetch_assoc();
     $nome_medico = $row["nome"];
+    $clinica = $row["clinica"];
     //$cpf = $row["cpf"];
     setcookie('nome_medico', $nome_medico, time()+3600);
     setcookie('crm', $crm, time()+3600);
+    setcookie('clinica', $clinica, time()+3600);
 
     header("Location: telasMedicos/homepage.php");
     exit();

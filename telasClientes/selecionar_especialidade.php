@@ -10,9 +10,10 @@
     <div class="fundo"></div>
     
     <div class = "header"><?php printf("<label>Olá, " . $_COOKIE['nome'] . "!</label>"); ?>
+    <a href='../index.html' class='btn'>Sair<a>
     </div>
 
-    <div class="container">
+    <div class="container3">
     <?php
 
     setcookie('contagem', 0, time()+3600);

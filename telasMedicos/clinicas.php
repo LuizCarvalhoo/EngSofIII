@@ -13,7 +13,9 @@
     <div class = "header"><?php printf("<label>Olá, Dr." . $_COOKIE['nome_medico'] . "!</label>"); ?>
     <a href='homepage.php' class='btn'>Voltar</a></div>
     </div>
+    
     <?php
+    
     $crm = $_COOKIE['crm'];
     // Conexão com o banco de dados
     $conn = new mysqli("localhost", "root", "", "medicos");
@@ -24,45 +26,48 @@
     }
 
     // SQL para buscar todos os especialistas
-    $sql = "SELECT * FROM consultas WHERE crm = '$crm'";
+    $sql = "SELECT * FROM clinicas";
     $result = $conn->query($sql);
 
     // Exibe cada médico como opção no select
-    if ($result->num_rows > 0) {
+    
+       if ($result->num_rows > 0) {
+        setcookie('pkclinica', 0, time()+3600);
         printf("<div class='espacamento'>");
+        printf("<center><a href='CadastroClínica.php' class='btn'>Adicionar Clinica</a></center>");
         while ($row = $result->fetch_assoc()) {
-            $data = $row["data"];
-            $datamos = date("d/m/Y", strtotime($data));
+            $_COOKIE['pkclinica'] = $_COOKIE['pkclinica']+1;
+            $nome = $row["nome"];
+            $rua = $row["rua"];
+            $cidade = $row["cidade"];
             //$data = date("d/m/Y", strtotime($data));
             echo "<div class=listaMed>
-                Data: ".$datamos."
-                <div>Horário: ".$row["hora"]."</div>
-                <div> ".$row["paciente"]." </div>
+                Nome: ".$nome."
+                <div>Cidade: ".$cidade."</div>
+                <div>Rua: ".$rua." </div>
                 <div><form action='cancelar_consulta.php' method='post'>
-                <input type= 'hidden' name='cpf' value=".$row['cpf'].">
-                <input type= 'hidden' name='crm' value=".$row['crm'].">
-                <input type= 'hidden' name='data' value=".$row['data'].">
-                <input type= 'hidden' name='hora' value=".$row['hora'].">
-                <button type='submit' class= 'btn2'>Cancelar</button></form></div>
+                <input type= 'hidden' name='pkclinica' value=".$row['pkclinica'].">
+                <input type= 'hidden' name='nome' value=".$row['nome'].">
+                <input type= 'hidden' name='cidade' value=".$row['cidade'].">
+                <input type= 'hidden' name='rua' value=".$row['rua'].">
+                <button type='submit' class= 'btn'>Ingressar</button></form></div>
                 
-                <form action='alterar_consulta.php' method='post'>
-                <input type= 'hidden' name='cpf' value=".$row['cpf'].">
-                <input type= 'hidden' name='crm' value=".$row['crm'].">
-                <input type= 'hidden' name='data' value=".$row['data'].">
-                <input type= 'hidden' name='hora' value=".$row['hora'].">
-                
+                <form action='alterar_clinica.php' method='post'>
                 </div>";
+
         }
+        
         printf("</div>");
     } else {
         echo "<p class='container'>Você ainda não tem consultas agendadas.</p>";
     }
-
+    
 
 
     $conn->close();
 
     ?>
+    
 </form>
 </body>
 </html>

@@ -32,8 +32,10 @@
         printf("<div class='espacamento'>");
         while ($row = $result->fetch_assoc()) {
             $data = $row["data"];
-            $data = date("d/m/Y", strtotime($data));
-            echo "<div class=listaMed>Data: ".$data."
+            $datamos = date("d/m/Y", strtotime($data));
+            //$data = date("d/m/Y", strtotime($data));
+            echo "<div class=listaMed>
+                Data: ".$datamos."
                 <div>Horário: ".$row["hora"]."</div>
                 <div>Dr. ".$row["medico"]."</div>
                 <div><form action='cancelar_consulta.php' method='post'>
@@ -42,6 +44,13 @@
                 <input type= 'hidden' name='data' value=".$row['data'].">
                 <input type= 'hidden' name='hora' value=".$row['hora'].">
                 <button type='submit' class= 'btn2'>Cancelar</button></form></div>
+                
+                <form action='alterar_consulta.php' method='post'>
+                <input type= 'hidden' name='cpf' value=".$row['cpf'].">
+                <input type= 'hidden' name='crm' value=".$row['crm'].">
+                <input type= 'hidden' name='data' value=".$row['data'].">
+                <input type= 'hidden' name='hora' value=".$row['hora'].">
+                <button type='submit' class= 'btn3'>Alterar</button>
                 </div>";
         }
         printf("</div>");
